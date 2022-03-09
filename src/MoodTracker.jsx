@@ -21,6 +21,14 @@ class MoodTracker extends Component {
         });
     };
 
+    handleDecreaseMood = () => {
+        this.setState((prevState,props) => {
+            return {
+                points: prevState.points - 1
+            }
+        })
+    }
+
     handleResetTen = () => {
         this.setState({
             points: 10,
@@ -33,10 +41,13 @@ class MoodTracker extends Component {
                 <h1 className="text-center">Mood Tracker</h1>
                 <ButtonGroup>
                     <Button onClick={this.handleIncreaseMood} variant="primary">
-                        🌈
+                        Lift
                     </Button>
                     <Button onClick={this.handleResetTen} variant="secondary">
                         Reset Mood
+                    </Button>
+                    <Button onClick={this.handleDecreaseMood} variant="danger">
+                        Decrease
                     </Button>
                 </ButtonGroup>
                 <MoodPoints points={this.state.points} />
