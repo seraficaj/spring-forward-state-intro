@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import { Container, Row } from 'react-bootstrap';
+import MoodTracker from './MoodTracker';
 
 class App extends Component {
   render() { 
     return (
-      <h1>Hello</h1>
+      <Container>
+        <MoodTracker />
+        <Row>
+
+        </Row>
+      </Container>
     );
   }
 }
